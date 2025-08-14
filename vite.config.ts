@@ -9,7 +9,12 @@ export default defineConfig(({ mode }) => {
     server: {
       host: "::",
       port: 8080,
-      allowedHosts: true,
+      allowedHosts: [
+        "localhost",
+        ".fly.dev", // 所有 fly.dev 子域名
+        ".vercel.app", // 如果也用 Vercel
+        ".netlify.app", // 如果也用 Netlify
+      ],
     },
     base: "./",
   };
